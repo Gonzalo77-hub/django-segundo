@@ -14,27 +14,29 @@
 
 </head>
 
-<body onload="mueveReloj()">
+<body >
 
 
     <div class="container"> 
 
         <div class="row mt-4 text-center border border-primary border-4 ">
-            <h1>The current time and date</h1>
-
+            <h1>Palabras Aletorias</h1>
+            <h1>{{request.session.cont}} hola
+            </h1>
         </div>
 
-        <form name="form_reloj" , class="text-center my-5 tam ">
-            <div class="text-center tam pt-3 ">Hora dinamica </div>
-            <input type="text" name="reloj" size="30" class="text-center border-5 border-dark rel">
-        </form>
-
-        <div class="row mt-5 px-3 text-center border border-danger border-4 reloj1">
-            <h1> {{time2}} </h1>
-            <h1> {{time}} </h1>
+    
+        <div class="row mt-5 px-3 text-center border border-danger border-4">
+            <h1> {{word}} </h1>
+            <h1> {{cont}} </h1>
 
         </div>
-
+        <div class="text-center my-5">
+        <form action="/word/" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary text-center justify-content-center">Generar Palabra</button>
+          </form>
+        </div>
 
 
     </div>
